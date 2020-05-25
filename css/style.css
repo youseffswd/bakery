@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css?family=Niconne&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Teko:300,400&display=swap');
+
+
+*{
+    text-transform: capitalize;
+}
+a{
+    color:#fff !important;
+}
+p{
+    margin:0;
+}
+header{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(16,29,44,.9),rgba(16,29,44,.9)),
+                url(../img/header-bg.jpg) center no-repeat;
+                background-size: cover;
+    position: relative;
+}
+header > .container{
+    height: 100%;
+    padding:0 ;
+}
+.navbar-brand{
+    position: absolute;
+    width: 100%;
+    max-width: 100px;
+    top: 10px;
+    left: 50%;
+    transform: translatex(-50%);
+    transition: opacity 650ms;
+}
+.navbar-brand:hover{
+    opacity: .8;
+}
+.hamburger-menu{
+    position: fixed;
+    top: 25px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    background-color: #101d2c;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 999;
+}
+.hamburger-menu i {
+    font-size: 30px;
+    color:rgba(198,153,99,.7);
+    margin: auto;
+}
+.hamburger-menu .fa-times{
+    display: none;
+}
+.hamburger-menu .fa-times.open{
+    display: block;
+}
+.hamburger-menu .fa-bars.open{
+    display: none;
+}
+.nav-list{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #101d2c;
+    z-index: 900;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity:0;
+    transform: scale(0);
+    transition:.4s all linear;
+}
+.nav-list.open{
+    transform: scale(1);
+    opacity:1;
+}
+.nav-list.open li,
+.nav-list li{
+    opacity: 0;
+    transform: translatey(5px);
+}
+.nav-list.open li:nth-of-type(1){
+    animation: linear .2s top forwards .3 ;
+}
+.nav-list.open li:nth-of-type(2){
+    animation: linear .2s top  .5s forwards;
+}
+.nav-list.open li:nth-of-type(3){
+    animation: linear .2s top .7s forwards;
+}
+.nav-list.open li:nth-of-type(4){
+    animation: linear .2s top .9s forwards;
+}
+@keyframes top{
+    from{
+        opacity: 0;
+    transform: translatey(5px);
+    }
+    to{
+        opacity: 1;
+        transform: translatey(0);
+    }
+}
+.hero-text{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-45%);
+    text-align: center;
+}
+.hero-text h1{
+    font-family:"Niconne",cursive ;
+    color: #c69963;
+}
+.btn{
+    width:100px ;
+    padding: 5px 0 !important;
+    border: 1px solid #c69963;
+    position: relative;
+    overflow: hidden;
+}
+.btn::before{
+    content:"";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(120deg,transparent,rgba(255,255,255,.3),transparent);
+    transition: all .5s linear;
+}
+.btn:hover::before{
+    left: 100%;
+}
+.section-heading h4{
+    text-transform: uppercase;
+    color: #101d2c;
+    line-height: 0;
+    font-family: "teka" , sans-serif;
+    font-weight: 300;
+    letter-spacing: 1px;
+
+}
+.section-heading h1{
+    font-family: "Niconne", cursive;
+    color: #c69963;
+}
+.about .btn{
+    width: 150px;
+    color: #c69963 !important;
+    transition: all .65s linear;
+    
+}
+.about .btn:hover{
+    color: #ffffff !important;
+    background-color: #c69963;
+}
+.menu{
+    background-color: #101d2c;
+}
+.shop-info i{
+    color:#c69963;
+    font-size:50px;
+    
+}
+.shop-info h1{
+    font-size:25px ;
+    font-family: "Teka" , sans-serif;
+}
+.shop-info p{
+    color: rgba(255,255,255,.7);
+}
+hr{
+    border-top: 1px solid rgba(255,255,255,.05);
+
+}
+.point-right,
+.point-left{
+    position: relative;
+    background-color: #fff;
+    display: flex;
+}
+.point-left::before,
+.point-right::before{
+    content:"";
+    position: absolute;
+    width: 25px;
+    height:25px;
+    background-color: inherit;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    z-index: 1;
+
+}
+.menu-item-desc{
+    padding: 50px 10px;
+    color: #212529;
+    margin: auto;
+}
+.menu-item-desc h6{
+    color:#c69963;
+    font-size: 20px;
+}
+.menu-item-desc h1{
+    color: #101d2c;
+    font-size: 30px;
+    letter-spacing: 1px;
+    font-family: "teko" , sans-serif;
+    font-weight:300;
+}
+
+
+
+.card-body h1{
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-family: "teko" , sans-serif;
+    font-weight: 300;
+}
+.card-body h6{
+    font-size: 16px;
+    color:#c69963;
+
+}
+footer{
+    background-color: #101d2c;
+    color: rgba(255,255,255,.5);
+
+}
+
+
+
+
+
+
+@media (min-width : 576px){
+    .navbar-brand{
+        max-width: 150px;
+    }
+    .hamburger-menu{
+        top: 35px;
+        right: 25px;
+    }
+    .point-right::before,
+    .point-left::before{
+        display: none;
+    }
+    .menu-item-desc{
+        padding: 50px 40px;
+    }
+}
+@media (min-width : 760px){
+    .btn{
+        width: 150px;
+    }
+    .point-right::before,
+    .point-left::before{
+        display: block;
+    }
+    
+
+}
+@media (min-width : 992px){
+    header > .container{
+        padding: 0 15px
+    }
+    .hamburger-menu{
+        display: none;
+    }
+    .navbar-brand{
+        position: initial;
+        transform: initial;
+    }
+    .nav-list{
+        position: initial;
+        width: initial;
+        height: initial;
+        background-color: initial;
+        flex-direction: row;
+        opacity: initial;
+        transform: initial;
+        transition: initial;
+        margin: 0;
+        padding: 0;
+    }
+    .nav-list.open li,
+    .nav-list li{
+    opacity: initial;
+    transform: initial;
+    }
+    .nav-item{
+        margin: 0 30px;
+    }
+    .nav-item:last-of-type{
+        margin: 0;
+    }
+    .nav-link{
+        position: relative;
+        padding: 0;
+    }
+    .nav-link::before{
+        content:"";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        background-color: #c69963;
+        width: 100%;
+        height: 2px;
+        transform: scale(0);
+        transform-origin:center ;
+        transition: all .65s ;
+    }
+    .nav-link:hover::before{
+        transform: scale(1);
+
+    }
+    
+}
+@media (min-width : 1200px){
+    .point-right::before,
+    .point-left::before{
+        display: none;
+        top: 50%;
+        left: initial;
+        transform:translate(0,-50%) rotate(45deg);
+    }
+    .point-left::before{
+        left:-12px;
+    }
+    .point-right::before{
+        right:-12px;
+    }
+    .menu-item-desc p{
+        display: none;
+    }
+    .menu-item-desc .btn{
+        color: #ffffff !important;
+        background-color: #c69963;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
