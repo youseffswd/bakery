@@ -5,6 +5,8 @@
 *{
     text-transform: capitalize;
 }
+body{
+    overflow-x:hidden;
 a{
     color:#fff !important;
 }
@@ -75,6 +77,7 @@ header > .container{
     opacity:0;
     transform: scale(0);
     transition:.4s all linear;
+    list-style:none;
 }
 .nav-list.open{
     transform: scale(1);
